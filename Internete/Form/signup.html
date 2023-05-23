@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="file:///c:/Users/acer/Desktop/Internete/Form/form.css">
+</head>
+<body>
+    <section class="container forms">
+        <div class="form login">
+            <div class="form-content">
+                <header>Signup</header>
+                <form action="signup.php" method="post" onsubmit="return submitForm(event)">
+                    <div class="field input-field">
+                        <input type="text" placeholder="First Name" name="first_name" id="first_name" class="input">
+                        <span class="error" id="first_name_error"></span>
+                    </div>
+                    <div class="field input-field">
+                        <input type="text" placeholder="Last Name" name="last_name" id="last_name" class="input">
+                        <span class="error" id="last_name_error"></span>
+                    </div>
+                    <div class="field input-field">
+                        <input type="text" placeholder="Email" name="email" id="email" class="input" onblur="checkEmail()">
+                        <span class="error" id="email_error"></span>
+                    </div>
+                    <div class="field input-field">
+                        <input type="password" placeholder="Password" name="password" id="password" class="input">
+                        <span class="error" id="password_error"></span>
+                    </div>
+                    <div class="field button">
+                        <button type="submit" class="submit-button">Signup</button>
+                    </div>
+                    <div class="link">Already have an account? <a href="file:///c:/Users/acer/Desktop/Internete/Form/login.html">Login now</a></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get the input values
+            let firstName = document.getElementById("first_name").value.trim();
+            let lastName = document.getElementById("last_name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            // Validate the inputs
+            let valid = true;
+
+            if (firstName === "") {
+                document.getElementById("first_name_error").innerHTML = "Please enter your first name";
+                valid = false;
+            } else {
+                document.getElementById("first_name_error").innerHTML = "";
+            }
+
+            if (lastName === "") {
+                document.getElementById("last_name_error").innerHTML = "Please enter your last name";
+                valid = false;
+            } else {
+                document.getElementById("last_name_error").innerHTML = "";
+            }
+
+            if (email === "") {
+                document.getElementById("email_error").innerHTML = "Please enter your email address";
+                valid = false;
+            } else {
+                document.getElementById("email_error").innerHTML = "";
+            }
+
+            if (password === "") {
+                document.getElementById("password_error").innerHTML = "Please enter your password";
+                valid = false;
+            } else {
+                document.getElementById("password_error").innerHTML = "";
+            }
+
+            if (!valid) {
+                return false;
+            }
+
+            // Make an AJAX request to the PHP script
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "signup.php");
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let response = xhr.responseText;
+                    if (response === "success") {
+                        alert("Signup successful");
+                        location.reload();
+                    } else {
+                        document.getElementById("email_error").innerHTML = response;
+                    }
+                }
+            };
+            xhr.send("first_name=" + firstName + "&last_name=" + lastName + "&email=" + email + "&password=" + password);
+        }
+
+        function checkEmail() {
+            let email = document.getElementById("email").value.trim();
+
+            if (email !== "") {
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "check_email.php");
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        let response = xhr.responseText;
+                        if (response === "taken") {
+                            document.getElementById("email_error").innerHTML = "Email already taken";
+                        } else {
+                            document.getElementById("email_error").innerHTML = "";
+                        }
+                    }
+                };
+                xhr.send("email=" + email);
+            }
+        }
+    </script>
+</body>
+</html>

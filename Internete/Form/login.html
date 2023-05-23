@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup Form</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="file:///c:/Users/acer/Desktop/Internete/Form/form.css">
+</head>
+<body>
+    <section class="container forms">
+        <div class="form login">
+            <div class="form-content">
+                <header>Login</header>
+                <form action="login.php" method="POST">
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" name="email" class="input">
+                    </div>
+                    <div class="field input-field">
+                        <input type="password" placeholder="Password" name="password" class="password">
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+                    <div class="field button-field">
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
+                <div class="form-link">
+                    <span>Don't have an account? <a href="file:///c:/Users/acer/Desktop/Internete/Form/signup.html" class="link signup-link">Signup</a></span>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="media-options">
+                <a href="https://www.facebook.com/" class="field facebook">
+                    <img src="5..jpg" class='bx bxl-facebook facebook-icon'></i>
+                    <span>Login with Facebook</span>
+                </a>
+            </div>
+            <div class="media-options">
+                <a href="https://www.gmail.com/" class="field facebook_1">
+                    <img src="6.png" class='bx bxl-facebook facebook-icon'></i>
+                    <span>Login with Gmail</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Check for error message in URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        const email = urlParams.get('email');
+        if (error) {
+            // Display error message
+            const errorMessage = document.createElement('p');
+            errorMessage.style.color = 'red';
+            if (error === 'email') {
+                errorMessage.textContent = 'Email not found';
+            } else if (error === 'password') {
+                errorMessage.textContent = 'Incorrect password';
+            }
+            const formContent = document.querySelector('.form-content');
+            formContent.insertBefore(errorMessage, formContent.firstChild);
+
+            // Fill in the email field with the previous value
+            const emailField = document.querySelector('input[name="email"]');
+            emailField.value = email;
+        }
+
+        // Show/hide password
+        const passwordField = document.querySelector('.password');
+        const passwordToggle = document.querySelector('.eye-icon');
+        passwordToggle.addEventListener('click', function() {
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                passwordToggle.classList.remove('bx-hide');
+                passwordToggle.classList.add('bx-show');
+            } else {
+                passwordField.type = 'password';
+                passwordToggle.classList.remove('bx-show');
+                passwordToggle.classList.add('bx-hide');
+            }
+        });
+
+        // Set focus on the email field
+        const emailField = document.querySelector('input[name="email"]');
+        emailField.focus();
+    </script>
+</body>
+</html>
