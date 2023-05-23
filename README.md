@@ -2,9 +2,9 @@
 <html>
 <head>
 	<title>Library Website</title>
-	<link rel="stylesheet" href="file:///c:/Users/acer/Desktop/Internete/Form/internet.css">
+	<link rel="stylesheet" href="file:///internete/internet.css">
     <link rel="Website icon" type="png"
-    href="file:///c:/Users/acer/Desktop/Internete/image/.jpg">
+    href="file:Internete/image/.jpg">
   </head>
 <body>
 	<header>
@@ -13,11 +13,11 @@
             <div class="dropdown">
                 <button class="k"><a>Categorys</a></button>
                   <div class="dropdown-options">
-                    	<a href="file:///C:/Users/acer/Desktop/Internete/Form/index.html">Home</a>
-                        <a href="file:///C:/Users/acer/Desktop/Internete/Form/Literature.html">Literature</a>
-                        <a href="file:///C:/Users/acer/Desktop/Internete/Form/Science%20Fiction.html">Science Fiction</a>
-                        <a href="file:///C:/Users/acer/Desktop/Internete/Form/Excitement%20and%20Suspense.html">Excitement and Suspense</a>
-                        <a href="file:///C:/Users/acer/Desktop/Internete/Form/Romantic.html">Romantic</a>
+                    	<a href="Internete/Form/index.html">Home</a>
+                        <a href="file:Internete/Form/Literature.html">Literature</a>
+                        <a href="file:Internete/Form/Science%20Fiction.html">Science Fiction</a>
+                        <a href="file:Internete/Form/Excitement%20and%20Suspense.html">Excitement and Suspense</a>
+                        <a href="file:Internete/Form/Romantic.html">Romantic</a>
                   </div>
              </div>
                 <div class="cart">
@@ -123,6 +123,6 @@
 			</ul>
 		</section>
 	</main>
-	<script src="file:///c:/Users/acer/Desktop/Internete/Form/internet.js"></script>
+	<script src="Internete/Form/internet.js"></script>
 </body>
 </html>
