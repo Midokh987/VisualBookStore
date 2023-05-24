@@ -1,0 +1,178 @@
+body {
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+h1 {
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6c757d;
+}
+
+nav ul li:first-child {
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.search {
+    margin-left: 10px;
+}
+
+.search form {
+    display: flex;
+}
+
+.search input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.search button {
+    padding: 11px 15px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.logout {
+    margin-left: 10px;
+}
+
+.k{
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: solid 1px #4CAF50;
+}
+
+.signup {
+    margin-left: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cart {
+    margin-left: 10px;
+}
+
+.cart a {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.cart-items {
+    background-color: #fff;
+    color: #333;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    display: none;
+}
+
+section:first-child {
+    display: block;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section li {
+    flex-basis: calc(33.33% - 20px);
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section li:last-child {
+    margin-right: 0;
+}
+
+section li img {
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 100%;
+    max-height: 200px;
+}
+
+section li h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+section li p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+section li button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
